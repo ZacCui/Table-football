@@ -6,7 +6,6 @@ const mongo = require('mongodb');
 const mongoose = require('mongoose');
 const hbs = require('hbs');
 const port = process.env.PORT || 7000;
-const host = "127.0.0.1"
 
 var app = express();
 
@@ -30,10 +29,8 @@ hbs.registerHelper('currYear', function(){
 const home = require('./app/rank.js');
 app.use('/', home);
 
-
-
 // start the server
-app.listen(port,host, function() {
+app.listen(port, function() {
   console.log('app started');
-  console.log('running at http://' + host + ':' + port);
+  console.log('running at port' + port);
 });
