@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 
 <html>
-	{{> header}}
+  {{> header}}
 	<body>
-		<h1> Hello world </h1>
-		<p>test</p>
+		<h1> Table Football </h1>
+    {{#if Msg }}
+      <h2 style="color:red;">{{Msg}}</h2>
+    {{/if}}
+     {{#if Success }}
+      <h2 style="color:green;">{{Success}}</h2>
+    {{/if}}
+		<div class="input-group" aria-label="Left Align">
+		  <form class="form-horizontal" action="/" method="POST">
+        <h4>Please Enter the Winner </h4>
+        <input name='win_id' type="number" class="form-control" placeholder="Employee ID(must be number)">
+        <input name='win_first' type="text" class="form-control" placeholder="First Name">
+        <input name='win_last' type="text" class="form-control" placeholder="Last Name">
+
+        <h4>Please Enter the Loser</h4>
+        <input name='lose_id' type="number" class="form-control" placeholder="Employee ID(must be number)">
+        <input name='lose_first' type="text" class="form-control" placeholder="First Name">
+        <input name='lose_last' type="text" class="form-control" placeholder="Last Name">
+        <br>
+        <button type="submit" class="btn btn-default" aria-label="Left Align">Submit</button>
+			</form>	
+		</div>
+    <br>
+    <a href="/rank">
+    <button type="button" class="btn btn-default" aria-label="Left Align">Rank</button>
+    </a>
 		{{> footer}}
 	</body>
 </html>
